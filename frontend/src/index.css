@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+:root{
+    --primary: #1aac83;
+    --borrowed: #2a0fdc78;
+    --taken: #e21f1f;
+    --returned: #148226;
+    --error: #e7195a;
+  }
+body{
+    background: #f1f1f1;
+    margin: 0;
+    font-family: 'Poppins', sans-serif; 
+}
+
+header{
+    background: #fff;
+}
+header .container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+.pages{
+    max-width: 1400px;
+    padding: 20px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 100px;
+}
+/* ALL BOOKS */
+.single-book{
+    background: #fff;
+    border-radius: 4px;
+    border-left: 5px solid var(--primary);
+    margin-left: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    position: relative;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+.single-book h4{
+    margin: 0px 0px 10px 0px;
+    font-size: 1.2em;
+    color: var(--primary);
+
+}
+.single-book p{
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}
+.single-book a{
+    text-decoration: none;
+    padding: 5px;
+    background: var(--primary);
+    margin-top: 5px;
+    color: #f1f1f1;
+    border-radius: 10px;
+}
+/* BORROWED BOOK */
+.borrowed-book{
+    background: #fff;
+    border-radius: 4px;
+    margin-left: 10px;
+    border-left: 0px solid var(--borrowed);
+    padding: 15px;
+    margin-bottom: 10px;
+    position: relative;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+.borrowed-book h4{
+    margin: 0px 0px 10px 0px;
+    font-size: 1.2em;
+    color: var(--borrowed);
+
+}
+.borrowed-book p{
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}
+.borrowed-book a{
+    text-decoration: none;
+    padding: 5px;
+    background: var(--borrowed);
+    margin-top: 5px;
+    color: #f1f1f1;
+    border-radius: 10px;
+}
+/* TAKEN BOOK */
+.taken-book{
+    background: #fff;
+    border-radius: 4px;
+    margin-left: 10px;
+    border-left: 5px solid var(--taken);
+    padding: 15px;
+    margin-bottom: 10px;
+    position: relative;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+.taken-book h4{
+    margin: 0px 0px 10px 0px;
+    font-size: 1.2em;
+    color: var(--taken);
+
+}
+.taken-book p{
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}
+.taken-book a{
+    text-decoration: none;
+    padding: 5px;
+    background: var(--taken);
+    margin-top: 5px;
+    color: #f1f1f1;
+    border-radius: 10px;
+}
+/* RETURNED BOOK */
+.returned-book{
+    background: #fff;
+    border-radius: 4px;
+    margin: 10px auto;
+    border-left: 5px solid var(--returned);
+    padding: 15px;
+    margin-bottom: 10px;
+    position: relative;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+.returned-book h4{
+    margin: 0px 0px 10px 0px;
+    font-size: 1.2em;
+    color: var(--taken);
+
+}
+.returned-book p{
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}
+.returned-book a{
+    text-decoration: none;
+    padding: 5px;
+    background: var(--returned);
+    margin-top: 5px;
+    color: #f1f1f1;
+    border-radius: 10px;
+}
+/* BOOK FORM STYLES */
+label,input{
+    display: block;
+}
+input{
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+form button{
+    background: var(--primary);
+    border: 0px;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+div .error{
+    padding: 10px;
+    background: #ffefef;
+    border: 1px solid var(--error);
+    border-radius: 4px;
+    margin: 20px 0;
+}
+.form-links{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 200px;
+}
+.page-links ul{
+    list-style: none;
+}
+.page-links ul li a{
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    margin-top: 20px;
+    padding: 5px;
+    color: #f1f1f1;
+    border-radius: 4px;
+}
+.all{
+    background: var(--primary);
+}
+.booked{
+    background: var(--borrowed);
+}
+.picked{
+    background: var(--taken);
+}
+.returnedd{
+    background: var(--returned);
+}
+/* .del{
+    margin-right: 5px;
+} */
