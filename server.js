@@ -2,10 +2,11 @@ const express = require('express');
 const { default: mongoose } = require('mongoose');
 const app = express();
 require('dotenv').config()
-const bookRoutes = require('./routes/booksRoutes')
-const userRoutes = require('./routes/usersRoutes')
-const TakenBook = require('./models/TakenBooks')
-const BorrowedBook = require('./models/BorrowedBooks')
+const bookRoutes = require('./backend/routes/booksRoutes')
+const userRoutes = require('./backend/routes/usersRoutes')
+const TakenBook = require('./backend/models/TakenBooks')
+const BorrowedBook = require('./backend/models/BorrowedBooks')
+
 const cors = require('cors')
 
 
@@ -39,28 +40,28 @@ mongoose.connect(process.env.dbURI)
     })
 
 //DELETE BOOKS AFTER A CERTAIN TIME
-function bookingExpiry(){
-    BorrowedBook.find()
-        .then((result)=>{
-           for(i=0; i < result.length; i++){
-            if((Date.now().toString()) - result[i].bookdate > 3600000){
-                const id = result[i]._id
-                BorrowedBook.findByIdAndDelete(id)
-                    .then((result)=>{
-                        console.log("Deleted")
-                    })
-                    .catch((err)=>{
-                        console.log(err)
-                    })
+// function bookingExpiry(){
+//     BorrowedBook.find()
+//         .then((result)=>{
+//            for(i=0; i < result.length; i++){
+//             if((Date.now().toString()) - result[i].bookdate > 3600000){
+//                 const id = result[i]._id
+//                 BorrowedBook.findByIdAndDelete(id)
+//                     .then((result)=>{
+//                         console.log("Deleted")
+//                     })
+//                     .catch((err)=>{
+//                         console.log(err)
+//                     })
                 
-            }
-           }
-        })
-        .catch((err)=>{
-            console.log(err)
-        })
-}
-setInterval(bookingExpiry,5000)
+//             }
+//            }
+//         })
+//         .catch((err)=>{
+//             console.log(err)
+//         })
+// }
+// setInterval(bookingExpiry,5000)
 
 //FINE FUNCTION
 // function calculateFine(){
