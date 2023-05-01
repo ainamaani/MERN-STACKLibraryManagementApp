@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const dotenv = require('dotenv');
+require('dotenv').config()
 const bookRoutes = require('./backend/routes/booksRoutes')
 const userRoutes = require('./backend/routes/usersRoutes')
 const TakenBook = require('./backend/models/TakenBooks')
@@ -10,7 +10,7 @@ const BorrowedBook = require('./backend/models/BorrowedBooks')
 const cors = require('cors')
 
 //env variables config
-dotenv.config({ path: "./.env" });
+
 
 
 //middleware
@@ -26,7 +26,7 @@ app.use('/api/user',userRoutes);
 console.log(process.env.dbURI);
 
 //connect to db
-mongoose.connect(process.env.dbURI,{ useNewUrlParser: true })
+mongoose.connect("mongodb+srv://librarian:manutd123@trial.nacabxh.mongodb.net/?retryWrites=true&w=majority",{ useNewUrlParser: true })
     .then(()=>{
         app.listen(process.env.PORT,()=>{
             console.log('Listening for requests now',process.env.PORT)
