@@ -1,13 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-require('dotenv').config()
+const dotenv = require('dotenv');
 const bookRoutes = require('./backend/routes/booksRoutes')
 const userRoutes = require('./backend/routes/usersRoutes')
 const TakenBook = require('./backend/models/TakenBooks')
 const BorrowedBook = require('./backend/models/BorrowedBooks')
 
 const cors = require('cors')
+
+//env variables config
+dotenv.config({ path: "./.env" });
 
 
 //middleware
