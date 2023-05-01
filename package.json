@@ -5,12 +5,12 @@
   "main": "server.js",
   "engines": {
     "node": "16.17.1",
-    "npm":"8.15.0"
+    "npm": "8.15.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon -L server.js",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
     "start": "node server.js"
   },
   "author": "",
@@ -22,7 +22,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.0.1",
+    "mongoose": "^7.1.0",
     "nodemailer": "^6.9.1",
     "nodemon": "^2.0.21",
     "validator": "^13.9.0"

@@ -1,5 +1,5 @@
 const express = require('express');
-const { default: mongoose } = require('mongoose');
+const mongoose = require('mongoose');
 const app = express();
 require('dotenv').config()
 const bookRoutes = require('./backend/routes/booksRoutes')
@@ -20,19 +20,13 @@ app.use((req,res,next)=>{
 app.use('/api/books',bookRoutes);
 app.use('/api/user',userRoutes);
 
-//configure deployment
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('frontend/build'));
-    app.get("*",(req,res)=>{
-        res.sendFile(path.resolve(__dirname,"frontend","build","index.html"));
-    })
-}
+console.log(process.env.dbURI);
 
 //connect to db
-mongoose.connect(process.env.dbURI)
+mongoose.connect(process.env.dbURI,{ useNewUrlParser: true })
     .then(()=>{
         app.listen(process.env.PORT,()=>{
-            console.log('Listening for requests now')
+            console.log('Listening for requests now',process.env.PORT)
         })
     })
     .catch((err)=>{
@@ -62,6 +56,16 @@ mongoose.connect(process.env.dbURI)
 //         })
 // }
 // setInterval(bookingExpiry,5000)
+
+//configure deployment
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('frontend/build'));
+    app.get("*",(req,res)=>{
+        res.sendFile(path.resolve(__dirname,"frontend","build","index.html"));
+    })
+}
+
+
 
 //FINE FUNCTION
 // function calculateFine(){
