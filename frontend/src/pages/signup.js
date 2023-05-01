@@ -16,7 +16,6 @@ const SignUpForm = () => {
         e.preventDefault();
         await signup(fullname,studentnumber,email,course,contact,password);
         navigate('/books');
-
         
     }
     
