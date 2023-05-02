@@ -12,7 +12,7 @@ const Navbar = () => {
     return ( 
         <header>
             <div className="container">
-                <h1>Library Management System</h1>
+                <h1>Library Management System.</h1>
                 {!user && (
                     <div>
                         <Link to={"/signup"}>Sign up</Link>
