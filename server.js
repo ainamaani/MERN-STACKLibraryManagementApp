@@ -2,10 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 require('dotenv').config()
-const bookRoutes = require('./backend/routes/booksRoutes')
-const userRoutes = require('./backend/routes/usersRoutes')
-const TakenBook = require('./backend/models/TakenBooks')
-const BorrowedBook = require('./backend/models/BorrowedBooks')
+const bookRoutes = require('./routes/booksRoutes')
+const userRoutes = require('./routes/usersRoutes')
+const TakenBook = require('./models/TakenBooks')
+const BorrowedBook = require('./models/BorrowedBooks')
 
 const cors = require('cors')
 
@@ -23,7 +23,6 @@ app.use((req,res,next)=>{
 app.use('/api/books',bookRoutes);
 app.use('/api/user',userRoutes);
 
-console.log(process.env.dbURI);
 
 //connect to db
 mongoose.connect("mongodb+srv://librarian:manutd123@trial.nacabxh.mongodb.net/?retryWrites=true&w=majority",{ useNewUrlParser: true })

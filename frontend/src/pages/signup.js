@@ -15,7 +15,7 @@ const SignUpForm = () => {
     const userSignup = async(e) =>{
         e.preventDefault();
         await signup(fullname,studentnumber,email,course,contact,password);
-        navigate('/books');
+        navigate('/login');
         
     }
     
