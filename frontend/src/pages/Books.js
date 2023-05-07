@@ -42,13 +42,13 @@ const Books = () => {
                 <input type="text" placeholder='Search by title' 
                 onChange={(e)=>{setSearchQuery(e.target.value)}} value={searchQuery}
                 />
-                <button onClick={handleSearch}>Search</button>
+                <button className='searchbut' onClick={handleSearch}>Search</button>
              </div>
-             <div className="categories">
+             {/* <div className="categories">
                 {books && books.map(book =>(
                     <Link to={`/boooks/${book.subject}`} >{book.subject}</Link>
                 ))}
-             </div>
+             </div> */}
             <div className="books">
             {searchResults.length > 0 ? 
             (searchResults && searchResults.map(book => <BookDetails key={book._id} book={book} />)) :
