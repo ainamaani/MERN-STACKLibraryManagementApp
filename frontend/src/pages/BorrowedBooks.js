@@ -38,7 +38,7 @@ const BorrowedBooks = () => {
             <input type="text" placeholder='Search by title' 
             onChange={(e)=>{setSearchQuery(e.target.value)}} value={searchQuery}
             />
-            <button onClick={handleSearch}>Search</button>
+            <button className='searchbut' onClick={handleSearch}>Search</button>
         </div>
         <div className="booked">
             

@@ -243,6 +243,7 @@ div .error{
     outline: none;
     border: 3px solid var(--primary);
     font-size: 1.1em;
+    cursor: pointer;
 }
 .searchbut{
     padding: 10px;
@@ -253,3 +254,41 @@ div .error{
 .single-book a{
     margin-top: 10px !important;
 }
+.del{
+    background: #e21f1f;
+    margin-right: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1em;
+    border: 0;
+}
+
+
+.category {
+    width: 300px; /* Adjust the width as per your requirement */
+    height: 200px; /* Adjust the height as per your requirement */
+    background-color: #f0f0f0; /* Set the background color for the card */
+    border-radius: 8px; /* Add rounded corners to the card */
+    margin-bottom: 20px; /* Adjust the spacing between the cards */
+    overflow: hidden; /* Ensure that the category content does not overflow */
+    position: relative; /* Position the category container */
+  }
+  
+  .categorylink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: #ffffff; /* Set the color for the category title */
+    font-weight: bold;
+    font-size: 20px; /* Adjust the font size for the category title */
+    position: absolute; /* Position the category title on top of the background image */
+    top: 0;
+    left: 0;
+    background-size: cover; /* Make the background image cover the entire card */
+    background-position: center; /* Center the background image within the card */
+    padding: 10px; /* Add padding to the category title */
+  }
